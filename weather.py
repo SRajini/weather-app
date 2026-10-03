@@ -170,7 +170,7 @@ def display_weather(data: dict, units: str) -> None:
 # CLI
 # --------------------------------------------------------------------------
 def get_api_key(cli_key: str | None) -> str:
-    key = cli_key or os.environ.get("OPENWEATHER_API_KEY") or "75e5964829ba7cd75bd14e8a96816a35"
+    key = cli_key or os.environ.get("OPENWEATHER_API_KEY") or "OPENWEATHER_API_KEY"
     if not key:
         print("Error: No API key found.\n"
               "Set the OPENWEATHER_API_KEY environment variable or pass --api-key.\n"

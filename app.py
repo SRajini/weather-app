@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request, jsonify
 import requests
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 app = Flask(__name__)
 
 API_KEY = os.environ.get("OPENWEATHER_API_KEY")
