@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather App</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+            ☁️ <span>WEATHER APP</span>
+        </div>
+
+        <div class="header-actions">
+            <span>🔍 Search</span>
+            <span>☰ Menu</span>
+        </div>
+
+    </header>
+
+
+    <!-- CURRENT WEATHER -->
+
+    <main>
+
+        <section class="current-weather">
+
+            <div class="location" id="location">
+                Search for a city
+            </div>
+
+            <div class="weather-icon" id="weatherIcon">
+                🌤️
+            </div>
+
+            <div class="temperature" id="temperature">
+                --°C
+            </div>
+
+            <div class="condition" id="condition">
+                --
+            </div>
+
+            <div class="high-low">
+
+                <span>
+                    H: <b id="high">--°C</b>
+                </span>
+
+                <span>
+                    L: <b id="low">--°C</b>
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- SEARCH -->
+
+        <section class="search-section">
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Enter city name"
+                    onkeydown="handleEnter(event)"
+                >
+
+                <button onclick="getWeather()">
+                    Search
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- HOURLY FORECAST -->
+
+        <section class="forecast-section">
+
+            <h2>HOURLY FORECAST</h2>
+
+            <div
+                class="hourly-container"
+                id="hourlyContainer"
+            >
+
+                <!-- JavaScript will add forecast here -->
+
+            </div>
+
+        </section>
+
+
+        <!-- 7 DAY FORECAST -->
+
+        <section class="forecast-section">
+
+            <h2>7-DAY FORECAST</h2>
+
+            <div
+                class="daily-container"
+                id="dailyContainer"
+            >
+
+                <!-- JavaScript will add forecast here -->
+
+            </div>
+
+        </section>
+
+
+        <!-- WEATHER DETAILS -->
+
+        <section class="details">
+
+            <div class="detail-box">
+
+                <span>💧</span>
+
+                <p>Humidity</p>
+
+                <strong id="humidity">
+                    --%
+                </strong>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <span>💨</span>
+
+                <p>Wind</p>
+
+                <strong id="wind">
+                    -- km/h
+                </strong>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <span>🌧️</span>
+
+                <p>Rain</p>
+
+                <strong id="rain">
+                    -- mm
+                </strong>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
